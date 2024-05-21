@@ -8,6 +8,16 @@ Rectangle {
         left: parent.left
         right: rightScreen.left
     }
-    color: "blue"
+    color: "white"
     width: parent.width * 1/3
+
+    Image {
+        id: carRender
+        anchors {
+            centerIn: parent
+        }
+        width: parent.width
+        fillMode: Image.PreserveAspectFit
+        source: "../data/Tesla.png"
+    }
 }
