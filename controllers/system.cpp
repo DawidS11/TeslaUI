@@ -37,3 +37,16 @@ void System::setUserName(const QString &newUserName)
     m_userName = newUserName;
     emit userNameChanged();
 }
+
+bool System::carLocked() const
+{
+    return m_carLocked;
+}
+
+void System::setCarLocked(bool newCarLocked)
+{
+    if (m_carLocked == newCarLocked)
+        return;
+    m_carLocked = newCarLocked;
+    emit carLockedChanged();
+}

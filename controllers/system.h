@@ -6,7 +6,7 @@
 class System : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(bool carLocked READ name carLocked setname setCarLocked nameChanged carLockedChanged)
+    Q_PROPERTY(bool carLocked READ carLocked WRITE setCarLocked NOTIFY carLockedChanged)
     Q_PROPERTY(int outdoorTemp READ outdoorTemp WRITE setOutdoorTemp NOTIFY outdoorTempChanged FINAL)
     Q_PROPERTY(QString userName READ userName WRITE setUserName NOTIFY userNameChanged FINAL)
 
@@ -21,10 +21,15 @@ public:
     QString userName() const;
     void setUserName(const QString &newUserName);
 
+    bool carLocked() const;
+    void setCarLocked(bool newCarLocked);
+
 signals:
     void outdoorTempChanged();
 
     void userNameChanged();
+
+    void carLockedChanged();
 
 private:
     bool m_carLocked;
