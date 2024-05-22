@@ -86,5 +86,19 @@ Rectangle {
         }
     }
 
+    Text {
+        id: timeDisplay
+        anchors {
+            left: lockIcon.right
+            bottom: lockIcon.bottom
+            leftMargin: 30
+        }
+
+        font.pixelSize: 13
+        font.bold: true
+        color: "black"
+        text: systemHandler.currentTime
+    }
+
     width: parent.width * 2/3
 }

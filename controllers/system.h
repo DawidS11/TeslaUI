@@ -2,6 +2,8 @@
 #define SYSTEM_H
 
 #include <QObject>
+#include <QTimer>
+#include <QDateTime>
 
 class System : public QObject
 {
@@ -24,6 +26,7 @@ public slots:
     void setUserName(const QString &newUserName);
     void setCarLocked(bool newCarLocked);
     void setCurrentTime(const QString &newCurrentTime);
+    void currentTimeTimerTimeout();
 
 signals:
     void outdoorTempChanged();
@@ -36,6 +39,7 @@ private:
     int m_outdoorTemp;
     QString m_userName;
     QString m_currentTime;
+    QTimer *m_currentTimeTimer;
 };
 
 #endif // SYSTEM_H

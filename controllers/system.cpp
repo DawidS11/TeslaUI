@@ -5,7 +5,14 @@ System::System(QObject *parent)
     , m_carLocked(true)
     , m_outdoorTemp(21)
     , m_userName("username")
-{}
+{
+    m_currentTimeTimer = new QTimer(this);
+    m_currentTimeTimer->setInterval(500);
+    m_currentTimeTimer->setSingleShot(true);
+    connect(m_currentTimeTimer, &QTimer::timeout, this, &System::currentTimeTimerTimeout );
+
+    currentTimeTimerTimeout();
+}
 
 int System::outdoorTemp() const
 {
@@ -57,4 +64,12 @@ void System::setCurrentTime(const QString &newCurrentTime)
         return;
     m_currentTime = newCurrentTime;
     emit currentTimeChanged();
+}
+
+void System::currentTimeTimerTimeout()
+{
+    QDateTime dateTime;
+    QString currentTime = dateTime.currentDateTime().toString("hh:mm ap");
+    setCurrentTime(currentTime);
+    m_currentTimeTimer->start();
 }
