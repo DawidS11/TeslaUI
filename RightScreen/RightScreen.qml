@@ -100,5 +100,19 @@ Rectangle {
         text: systemHandler.currentTime
     }
 
+    Text {
+        id: outdoorTemperatureDisplay
+        anchors {
+            left: timeDisplay.right
+            bottom: timeDisplay.bottom
+            leftMargin: 30
+        }
+
+        font.pixelSize: 13
+        font.bold: true
+        color: "black"
+        text: systemHandler.outdoorTemp + "°C"
+    }
+
     width: parent.width * 2/3
 }
