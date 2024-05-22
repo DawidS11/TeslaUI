@@ -45,3 +45,16 @@ void System::setCarLocked(bool newCarLocked)
     m_carLocked = newCarLocked;
     emit carLockedChanged();
 }
+
+QString System::currentTime() const
+{
+    return m_currentTime;
+}
+
+void System::setCurrentTime(const QString &newCurrentTime)
+{
+    if (m_currentTime == newCurrentTime)
+        return;
+    m_currentTime = newCurrentTime;
+    emit currentTimeChanged();
+}
