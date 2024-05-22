@@ -69,5 +69,22 @@ Rectangle {
         }
     }
 
+    Image {
+        id: lockIcon
+        anchors {
+            left: parent.left
+            top: parent.top
+            margins: 10
+        }
+
+        width: parent.width / 50
+        fillMode: Image.PreserveAspectFit
+        source: ( systemHandler.carLocked ? "../data/padlock.png" : "../data/padlock-unlock.png" )
+        MouseArea {
+            anchors.fill: parent
+            onClicked: systemHandler.setCarLocked(!systemHandler.carLocked)
+        }
+    }
+
     width: parent.width * 2/3
 }

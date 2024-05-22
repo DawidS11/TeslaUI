@@ -13,22 +13,18 @@ class System : public QObject
 public:
     explicit System(QObject *parent = nullptr);
 
-    bool name() const;
-
     int outdoorTemp() const;
-    void setOutdoorTemp(int newOutdoorTemp);
-
     QString userName() const;
-    void setUserName(const QString &newUserName);
-
     bool carLocked() const;
+
+public slots:
+    void setOutdoorTemp(int newOutdoorTemp);
+    void setUserName(const QString &newUserName);
     void setCarLocked(bool newCarLocked);
 
 signals:
     void outdoorTempChanged();
-
     void userNameChanged();
-
     void carLockedChanged();
 
 private:
