@@ -131,5 +131,32 @@ Rectangle {
         }
     }
 
+    Image {
+        id: userIcon
+        anchors {
+            left: recordingIcon.right
+            bottom: recordingIcon.bottom
+            leftMargin: 20
+        }
+
+        width: parent.width / 50
+        fillMode: Image.PreserveAspectFit
+        source: "../data/user.png"
+    }
+
+    Text {
+        id: usernameDisplay
+        anchors {
+            left: userIcon.right
+            bottom: userIcon.bottom
+            leftMargin: 10
+        }
+
+        font.pixelSize: 13
+        font.bold: true
+        color: "black"
+        text: systemHandler.userName
+    }
+
     width: parent.width * 2/3
 }

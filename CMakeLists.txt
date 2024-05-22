@@ -31,6 +31,7 @@ qt_add_qml_module(appTeslaUI
         RESOURCES data/recordOff.png
         RESOURCES
         RESOURCES data/recordOn.png
+        RESOURCES data/user.png
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
