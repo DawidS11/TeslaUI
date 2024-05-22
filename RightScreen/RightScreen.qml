@@ -91,7 +91,7 @@ Rectangle {
         anchors {
             left: lockIcon.right
             bottom: lockIcon.bottom
-            leftMargin: 30
+            leftMargin: 20
         }
 
         font.pixelSize: 13
@@ -105,13 +105,30 @@ Rectangle {
         anchors {
             left: timeDisplay.right
             bottom: timeDisplay.bottom
-            leftMargin: 30
+            leftMargin: 20
         }
 
         font.pixelSize: 13
         font.bold: true
         color: "black"
         text: systemHandler.outdoorTemp + "°C"
+    }
+
+    Image {
+        id: recordingIcon
+        anchors {
+            left: outdoorTemperatureDisplay.right
+            bottom: outdoorTemperatureDisplay.bottom
+            leftMargin: 20
+        }
+
+        width: parent.width / 50
+        fillMode: Image.PreserveAspectFit
+        source: ( systemHandler.recording ? "../data/recordOn.png" : "../data/recordOff.png" )
+        MouseArea {
+            anchors.fill: parent
+            onClicked: systemHandler.setRecording(!systemHandler.recording)
+        }
     }
 
     width: parent.width * 2/3

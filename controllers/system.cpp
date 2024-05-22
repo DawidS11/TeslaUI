@@ -5,6 +5,7 @@ System::System(QObject *parent)
     , m_carLocked(true)
     , m_outdoorTemp(21)
     , m_userName("username")
+    , m_recording(false)
 {
     m_currentTimeTimer = new QTimer(this);
     m_currentTimeTimer->setInterval(500);
@@ -72,4 +73,17 @@ void System::currentTimeTimerTimeout()
     QString currentTime = dateTime.currentDateTime().toString("hh:mm ap");
     setCurrentTime(currentTime);
     m_currentTimeTimer->start();
+}
+
+bool System::recording() const
+{
+    return m_recording;
+}
+
+void System::setRecording(bool newRecording)
+{
+    if (m_recording == newRecording)
+        return;
+    m_recording = newRecording;
+    emit recordingChanged();
 }

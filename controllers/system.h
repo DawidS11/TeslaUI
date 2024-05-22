@@ -12,6 +12,7 @@ class System : public QObject
     Q_PROPERTY(int outdoorTemp READ outdoorTemp WRITE setOutdoorTemp NOTIFY outdoorTempChanged FINAL)
     Q_PROPERTY(QString userName READ userName WRITE setUserName NOTIFY userNameChanged FINAL)
     Q_PROPERTY(QString currentTime READ currentTime WRITE setCurrentTime NOTIFY currentTimeChanged FINAL)
+    Q_PROPERTY(bool recording READ recording WRITE setRecording NOTIFY recordingChanged FINAL)
 
 public:
     explicit System(QObject *parent = nullptr);
@@ -20,6 +21,7 @@ public:
     QString userName() const;
     bool carLocked() const;
     QString currentTime() const;
+    bool recording() const;
 
 public slots:
     void setOutdoorTemp(int newOutdoorTemp);
@@ -27,12 +29,14 @@ public slots:
     void setCarLocked(bool newCarLocked);
     void setCurrentTime(const QString &newCurrentTime);
     void currentTimeTimerTimeout();
+    void setRecording(bool newRecording);
 
 signals:
     void outdoorTempChanged();
     void userNameChanged();
     void carLockedChanged();
     void currentTimeChanged();
+    void recordingChanged();
 
 private:
     bool m_carLocked;
@@ -40,6 +44,7 @@ private:
     QString m_userName;
     QString m_currentTime;
     QTimer *m_currentTimeTimer;
+    bool m_recording;
 };
 
 #endif // SYSTEM_H
