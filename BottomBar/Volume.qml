@@ -55,6 +55,6 @@ Item {
         }
     }
 
-    width: parent.width / 15
+    width: 96 * (parent.width / 1280)
     height: parent.height
 }

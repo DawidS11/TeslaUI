@@ -14,8 +14,8 @@ Rectangle {
         id: carIcon
         anchors {
             left: parent.left
-            leftMargin: 20
             verticalCenter: parent.verticalCenter
+            leftMargin: 20
         }
         height: parent.height * .7
         fillMode: Image.PreserveAspectFit
@@ -26,7 +26,8 @@ Rectangle {
         id: leftTemperature
         anchors {
             left: carIcon.right
-            verticalCenter: parent.verticalCenter
+            top: parent.top
+            bottom: parent.bottom
             leftMargin: 75
         }
         tempController: indoorLeftTemperatureHandler
@@ -38,10 +39,11 @@ Rectangle {
         anchors {
             left: leftTemperature.right
             verticalCenter: parent.verticalCenter
-            leftMargin: 75
+            leftMargin: 150
         }
 
         width: parent.width / 50
+        height: parent.height
         fillMode: Image.PreserveAspectFit
         source: "../data/call.png"
     }
@@ -55,6 +57,7 @@ Rectangle {
         }
 
         width: parent.width / 50
+        height: parent.height
         fillMode: Image.PreserveAspectFit
         source: "../data/music.png"
     }
@@ -68,6 +71,7 @@ Rectangle {
         }
 
         width: parent.width / 50
+        height: parent.height
         fillMode: Image.PreserveAspectFit
         source: "../data/photo.png"
     }
@@ -81,6 +85,7 @@ Rectangle {
         }
 
         width: parent.width / 50
+        height: parent.height
         fillMode: Image.PreserveAspectFit
         source: "../data/chat.png"
     }
@@ -94,6 +99,7 @@ Rectangle {
         }
 
         width: parent.width / 50
+        height: parent.height
         fillMode: Image.PreserveAspectFit
         source: "../data/notes.png"
     }
@@ -107,6 +113,7 @@ Rectangle {
         }
 
         width: parent.width / 50
+        height: parent.height
         fillMode: Image.PreserveAspectFit
         source: "../data/calendar.png"
     }
@@ -114,9 +121,10 @@ Rectangle {
     IndoorTemperature {
         id: rightTemperature
         anchors {
-            right: volumeIndoor.left
-            verticalCenter: parent.verticalCenter
-            rightMargin: 150
+            left: calendarIcon.right
+            top: parent.top
+            bottom: parent.bottom
+            leftMargin: 150
         }
         tempController: indoorRightTemperatureHandler
         height: parent.height
@@ -125,9 +133,10 @@ Rectangle {
     Volume {
         id: volumeIndoor
         anchors {
-            right: parent.right
-            verticalCenter: parent.verticalCenter
-            rightMargin: 50
+            left: rightTemperature.right
+            top: parent.top
+            bottom: parent.bottom
+            leftMargin: 150
         }
         height: parent.height
     }

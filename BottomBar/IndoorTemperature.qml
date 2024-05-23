@@ -26,7 +26,6 @@ Item {
             verticalCenter: parent.verticalCenter
             leftMargin: 30
         }
-
         font.pixelSize: 18
         font.bold: true
         color: "#CCCACA"
@@ -40,7 +39,6 @@ Item {
             verticalCenter: parent.verticalCenter
             leftMargin: 30
         }
-
         height: parent.height * .3
         fillMode: Image.PreserveAspectFit
         source: "../data/right.png"
@@ -50,6 +48,6 @@ Item {
         }
     }
 
-    width: parent.width / 8
+    width: 96 * (parent.width / 1280)
     height: parent.height
 }
