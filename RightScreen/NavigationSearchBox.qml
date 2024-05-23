@@ -22,6 +22,7 @@ Rectangle {
 
     Text {
         id: navigateText
+        visible: navigateTextInput.text === ""
         anchors {
             left: navigateIcon.right
             verticalCenter: parent.verticalCenter
@@ -32,6 +33,23 @@ Rectangle {
         font.bold: true
         color: "#888888"
         text: "Navigate"
+    }
+
+    TextInput {
+        id: navigateTextInput
+        clip: true
+        anchors {
+            left: navigateIcon.right
+            right: parent.right
+            verticalCenter: parent.verticalCenter
+            leftMargin: 30
+            rightMargin: 30
+        }
+
+        font.pixelSize: 18
+        font.bold: true
+        color: "black"
+        verticalAlignment: Text.AlignVCenter
     }
 
 }
