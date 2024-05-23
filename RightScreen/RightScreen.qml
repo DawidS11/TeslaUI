@@ -2,7 +2,6 @@ import QtQuick 2.15
 import QtLocation 6.7
 import QtPositioning 6.7
 
-
 Rectangle {
     id: rightScreen
     anchors {
@@ -156,6 +155,19 @@ Rectangle {
         font.bold: true
         color: "black"
         text: systemHandler.userName
+    }
+
+    NavigationSearchBox {
+        id: rightScreenNavigationSearchBox
+        anchors {
+            top: lockIcon.bottom
+            left: lockIcon.left
+            topMargin: 20
+            leftMargin: 15
+        }
+
+        width: parent.width / 3
+        height: parent.height / 15
     }
 
     width: parent.width * 2/3
