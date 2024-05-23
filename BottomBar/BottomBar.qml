@@ -59,6 +59,32 @@ Rectangle {
         source: "../data/music.png"
     }
 
+    Image {
+        id: photoIcon
+        anchors {
+            left: musicIcon.right
+            verticalCenter: parent.verticalCenter
+            leftMargin: 30
+        }
+
+        width: parent.width / 50
+        fillMode: Image.PreserveAspectFit
+        source: "../data/photo.png"
+    }
+
+    Image {
+        id: chatIcon
+        anchors {
+            left: photoIcon.right
+            verticalCenter: parent.verticalCenter
+            leftMargin: 30
+        }
+
+        width: parent.width / 50
+        fillMode: Image.PreserveAspectFit
+        source: "../data/chat.png"
+    }
+
     IndoorTemperature {
         id: rightTemperature
         anchors {
