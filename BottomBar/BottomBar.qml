@@ -32,4 +32,16 @@ Rectangle {
         tempController: indoorLeftTemperature
         height: parent.height
     }
+
+    IndoorTemperature {
+        id: rightTemperature
+        anchors {
+            right: parent.right
+            verticalCenter: parent.verticalCenter
+            rightMargin: 200
+        }
+        tempController: indoorRightTemperature
+        height: parent.height
+    }
+
 }

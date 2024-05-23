@@ -7,9 +7,7 @@ Item {
     Image {
         id: leftIcon
         anchors {
-            left: parent.right
             verticalCenter: parent.verticalCenter
-            leftMargin: 75
         }
         height: parent.height * .3
         fillMode: Image.PreserveAspectFit
@@ -21,7 +19,7 @@ Item {
     }
 
     Text {
-        id: leftTemperatureDisplay
+        id: temperatureDisplay
         anchors {
             left: leftIcon.right
             verticalCenter: parent.verticalCenter
@@ -37,10 +35,11 @@ Item {
     Image {
         id: rightIcon
         anchors {
-            left: leftTemperatureDisplay.right
+            left: temperatureDisplay.right
             verticalCenter: parent.verticalCenter
             leftMargin: 30
         }
+
         height: parent.height * .3
         fillMode: Image.PreserveAspectFit
         source: "../data/right.png"
