@@ -6,20 +6,20 @@
 class IndoorTemperature : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(float leftTemp READ leftTemp WRITE setLeftTemp NOTIFY leftTempChanged FINAL)
+    Q_PROPERTY(float temp READ temp WRITE setTemp NOTIFY tempChanged FINAL)
 
 public:
     explicit IndoorTemperature(QObject *parent = nullptr);
 
-    float leftTemp() const;
+    float temp() const;
 
 public slots:
-    void setLeftTemp(float newLeftTemp);
+    void setTemp(float newTemp);
 
 signals:
-    void leftTempChanged();
+    void tempChanged();
 private:
-    float m_leftTemp;
+    float m_temp;
 };
 
 #endif // INDOORTEMPERATURE_H

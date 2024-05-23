@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     System m_systemHandler;
-    IndoorTemperature m_indoorTemperature;
+    IndoorTemperature m_indoorLeftTemperature;
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/TeslaUI/Main.qml"));
@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 
     QQmlContext *context(engine.rootContext());
     context->setContextProperty("systemHandler", &m_systemHandler);
-    context->setContextProperty("indoorTemperature", &m_indoorTemperature);
+    context->setContextProperty("indoorLeftTemperature", &m_indoorLeftTemperature);
 
     return app.exec();
 }

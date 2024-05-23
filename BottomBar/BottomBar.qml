@@ -22,49 +22,14 @@ Rectangle {
         source: "../data/carIcon.png"
     }
 
-    Image {
-        id: leftIcon
+    IndoorTemperature {
+        id: leftTemperature
         anchors {
             left: carIcon.right
             verticalCenter: parent.verticalCenter
             leftMargin: 75
         }
-        height: parent.height * .3
-        fillMode: Image.PreserveAspectFit
-        source: "../data/left.png"
-        MouseArea {
-            anchors.fill: parent
-            onClicked: indoorTemperature.setLeftTemp(indoorTemperature.leftTemp - 0.5)
-        }
-    }
-
-    Text {
-        id: leftTemperatureDisplay
-        anchors {
-            left: leftIcon.right
-            verticalCenter: parent.verticalCenter
-            leftMargin: 30
-        }
-
-        font.pixelSize: 18
-        font.bold: true
-        color: "#CCCACA"
-        text: indoorTemperature.leftTemp.toFixed(1) + "°C"
-    }
-
-    Image {
-        id: rightIcon
-        anchors {
-            left: leftTemperatureDisplay.right
-            verticalCenter: parent.verticalCenter
-            leftMargin: 30
-        }
-        height: parent.height * .3
-        fillMode: Image.PreserveAspectFit
-        source: "../data/right.png"
-        MouseArea {
-            anchors.fill: parent
-            onClicked: indoorTemperature.setLeftTemp(indoorTemperature.leftTemp + 0.5)
-        }
+        tempController: indoorLeftTemperature
+        height: parent.height
     }
 }

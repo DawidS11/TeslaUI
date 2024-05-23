@@ -2,20 +2,20 @@
 
 IndoorTemperature::IndoorTemperature(QObject *parent)
     : QObject{parent}
-    , m_leftTemp(20)
+    , m_temp(20)
 {}
 
-float IndoorTemperature::leftTemp() const
+float IndoorTemperature::temp() const
 {
-    return m_leftTemp;
+    return m_temp;
 }
 
-void IndoorTemperature::setLeftTemp(float newLeftTemp)
+void IndoorTemperature::setTemp(float newTemp)
 {
-    if(newLeftTemp < 17.0 || newLeftTemp > 25)
+    if(newTemp < 17.0 || newTemp > 25)
         return;
-    if (m_leftTemp == newLeftTemp)
+    if (m_temp == newTemp)
         return;
-    m_leftTemp = newLeftTemp;
-    emit leftTempChanged();
+    m_temp = newTemp;
+    emit tempChanged();
 }
