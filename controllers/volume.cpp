@@ -21,8 +21,6 @@ void Volume::incrementValue(const int &val)
 
 void Volume::setVolume(int newVolume)
 {
-    if (m_volume == newVolume)
-        return;
     m_volume = newVolume;
     emit volumeChanged();
 }

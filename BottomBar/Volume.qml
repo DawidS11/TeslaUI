@@ -3,6 +3,24 @@ import QtQuick 2.15
 Item {
     id: volume
 
+    Connections {
+        target: volumeHandler
+        function onVolumeChanged() {
+            volumeDisplay.visible = false
+            visibleTimer.stop()
+            visibleTimer.start()
+        }
+    }
+
+    Timer {
+        id: visibleTimer
+        interval: 500
+        repeat: false
+        onTriggered: {
+            volumeDisplay.visible = true
+        }
+    }
+
     Image {
         id: decVolumeIcon
         anchors {
@@ -20,6 +38,7 @@ Item {
 
     Image {
         id: volumeDisplay
+        visible: true
         anchors {
             left: decVolumeIcon.right
             verticalCenter: parent.verticalCenter
@@ -36,6 +55,18 @@ Item {
                 "../data/volume0.png"
             }
         }
+    }
+
+    Text {
+        id: volumeTextDisplay
+        visible: !volumeDisplay.visible
+        anchors {
+            centerIn: volumeDisplay
+        }
+        font.pixelSize: 18
+        font.bold: true
+        color: "white"
+        text: volumeHandler.volume
     }
 
     Image {
