@@ -33,6 +33,32 @@ Rectangle {
         height: parent.height
     }
 
+    Image {
+        id: callIcon
+        anchors {
+            left: leftTemperature.right
+            verticalCenter: parent.verticalCenter
+            leftMargin: 75
+        }
+
+        width: parent.width / 50
+        fillMode: Image.PreserveAspectFit
+        source: "../data/call.png"
+    }
+
+    Image {
+        id: musicIcon
+        anchors {
+            left: callIcon.right
+            verticalCenter: parent.verticalCenter
+            leftMargin: 30
+        }
+
+        width: parent.width / 50
+        fillMode: Image.PreserveAspectFit
+        source: "../data/music.png"
+    }
+
     IndoorTemperature {
         id: rightTemperature
         anchors {

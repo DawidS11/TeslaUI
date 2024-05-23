@@ -7,6 +7,7 @@ Item {
     Image {
         id: leftIcon
         anchors {
+            left: parent.left
             verticalCenter: parent.verticalCenter
         }
         height: parent.height * .3
@@ -48,4 +49,7 @@ Item {
             onClicked: tempController.setTemp(tempController.temp + 0.5)
         }
     }
+
+    width: parent.width / 8
+    height: parent.height
 }
