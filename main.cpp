@@ -3,12 +3,14 @@
 #include <QQmlContext>
 
 #include <controllers/system.h>
+#include <controllers/indoortemperature.h>
 
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
 
     System m_systemHandler;
+    IndoorTemperature m_indoorTemperature;
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/TeslaUI/Main.qml"));
@@ -22,6 +24,7 @@ int main(int argc, char *argv[])
 
     QQmlContext *context(engine.rootContext());
     context->setContextProperty("systemHandler", &m_systemHandler);
+    context->setContextProperty("indoorTemperature", &m_indoorTemperature);
 
     return app.exec();
 }

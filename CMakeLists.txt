@@ -34,6 +34,11 @@ qt_add_qml_module(appTeslaUI
         RESOURCES data/user.png
         QML_FILES RightScreen/NavigationSearchBox.qml
         RESOURCES data/search.png
+        RESOURCES
+        RESOURCES data/right.png
+        RESOURCES data/left.png
+        SOURCES
+        SOURCES controllers/indoortemperature.h controllers/indoortemperature.cpp
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
