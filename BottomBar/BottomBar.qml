@@ -85,6 +85,32 @@ Rectangle {
         source: "../data/chat.png"
     }
 
+    Image {
+        id: notesIcon
+        anchors {
+            left: chatIcon.right
+            verticalCenter: parent.verticalCenter
+            leftMargin: 30
+        }
+
+        width: parent.width / 50
+        fillMode: Image.PreserveAspectFit
+        source: "../data/notes.png"
+    }
+
+    Image {
+        id: calendarIcon
+        anchors {
+            left: notesIcon.right
+            verticalCenter: parent.verticalCenter
+            leftMargin: 30
+        }
+
+        width: parent.width / 50
+        fillMode: Image.PreserveAspectFit
+        source: "../data/calendar.png"
+    }
+
     IndoorTemperature {
         id: rightTemperature
         anchors {
