@@ -1,4 +1,4 @@
-This program creates a UI similar to the one on Tesla's tablet. It does have some basic features changed via interaction:
+This program creates a UI similar to the one on Tesla's tablet. I have implemented a few features that are changeable via mouse and keyboard interactions:
 - map with location set to Valencia, Spain
 - navigation search bar
 - lock/unlock icon (changed via mouse click)
@@ -7,7 +7,8 @@ This program creates a UI similar to the one on Tesla's tablet. It does have som
 - indoor temperature for a driver and a passenger (set via clicks on the arrows next to the icons)
 - speakers' volume (set via clicks on the arrows next to the icon)
 
-It has been created using QML and C++/Qt. Icons downloaded from flaticon.com.
+Other icons do not have any behavior implemented.
+The programme has been created using QML and C++/Qt. Icons downloaded from flaticon.com.
 
 Here is a screenshot of the working application:
 
